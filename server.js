@@ -2,9 +2,7 @@ const express = require('express')
 const app = express()
 const PORT = 8080
 
-app.get("/", (req, res) => {
-    res.send("works")
-})
+app.use(express.static(__dirname + '/app/dist'))
 
 app.listen(PORT, (err) => {
     if (err) {
