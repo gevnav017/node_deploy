@@ -17,7 +17,7 @@ app.use(cors())
 app.use(bodyParser.json())
 app.use(express.static(__dirname + '/app/dist'))
 
-app.get("/contacts", (req, res) => {
+app.get("/movies", (req, res) => {
     try {
         const sql = "SELECT * FROM movies";
         db.query(sql, (err, result) => {
@@ -29,7 +29,7 @@ app.get("/contacts", (req, res) => {
     }
 })
 
-app.post("/contacts", (req, res) => {
+app.post("/movies", (req, res) => {
     try {
         const newMovie = req.body.newMovie
         const sql = "INSERT INTO movies (movie) VALUES (?)"
