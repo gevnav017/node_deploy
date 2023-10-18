@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
 import Home from '../components/Home'
-import Contacts from '../components/Contacts'
+import Movies from '../components/Movies'
 
 function App() {
 
@@ -12,12 +12,12 @@ function App() {
           <Link to="/">Home</Link>
         </li>
         <li style={{ margin:"10px" }}>
-          <Link to="/contacts">Contacts</Link>
+          <Link to="/movies">Movies</Link>
         </li>
       </ul>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/contacts" element={<Contacts />} />
+        <Route path="/movies" element={<Movies />} />
       </Routes>
     </>
   )
