@@ -7,7 +7,7 @@ const Movies = () => {
   useEffect(() => {
     const getMovies = async () => {
       try {
-        const response = await fetch("http://localhost:8080/movies")
+        const response = await fetch("http://44.225.165.236:8080/movies")
         const data = await response.json()
         setMovies(data)
       }
@@ -20,7 +20,7 @@ const Movies = () => {
   }, [movies])
 
   const insertMovie = () => {
-    fetch("http://localhost/movies", {
+    fetch("http://44.225.165.236:8080/movies", {
       method: "POST",
       body: JSON.stringify({ newMovie }),
       headers: { 'Content-Type': 'application/json' }
