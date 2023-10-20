@@ -17,6 +17,8 @@ app.use(cors())
 app.use(bodyParser.json())
 app.use(express.static(__dirname + '/app/dist'))
 
+app.use("/api", require("./api/trades"))
+
 app.get("/movies", (req, res) => {
     try {
         const sql = "SELECT * FROM movies";
