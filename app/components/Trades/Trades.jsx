@@ -14,7 +14,7 @@ const Trades = () => {
   const [trades, setTrades] = useState([]);
 
   useEffect(() => {
-    Axios.get("http://localhost:8080/api/trades")
+    Axios.get("http://44.225.165.236:8080/api/trades")
       .then((res) => res)
       .then((data) => setTrades(data.data))
       .catch((err) => {
