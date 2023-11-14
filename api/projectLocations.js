@@ -2,9 +2,9 @@ const express = require('express')
 const router = express.Router()
 const db = require('../db/connect')
 
-router.get("/trades", (req, res) => {
+router.get("/project-locations", (req, res) => {
     try {
-        const sql = "SELECT * FROM trades";
+        const sql = "SELECT * FROM projectLocations";
         db.query(sql, (err, result) => {
             res.json(result)
         })

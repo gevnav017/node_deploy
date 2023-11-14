@@ -17,8 +17,8 @@ const Movies = () => {
     }
 
     getMovies()
-  }, [movies])
-
+  }, [])
+  
   const insertMovie = () => {
     fetch("http://44.225.165.236:8080/movies", {
       method: "POST",

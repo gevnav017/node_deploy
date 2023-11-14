@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
-import Home from "../components/Home";
-import ProjectSpecs from "../components/ProjectSpecs";
-import BudgetLineItems from "../components/BudgetLineItems";
-import Trades from "../components/Trades/Trades";
-import Settings from "../components/Settings";
-import Movies from "../components/Movies";
+import Home from "./components/Home";
+import Projects from "./components/Projects";
+import ProjectSpecs from "./components/ProjectSpecs";
+import BudgetLineItems from "./components/BudgetLineItems";
+import Trades from "./components/Trades/Trades";
+import Settings from "./components/Settings/Settings";
+import Movies from "./components/Movies";
 
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -100,6 +101,14 @@ function App() {
                 </MenuItem>
                 <MenuItem onClick={handleCloseNavMenu}>
                   <Link
+                    to="/projects"
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    Projects
+                  </Link>
+                </MenuItem>
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Link
                     to="/project-specs"
                     style={{ textDecoration: "none", color: "black" }}
                   >
@@ -157,6 +166,14 @@ function App() {
               >
                 <Link to="/" style={{ textDecoration: "none", color: "white" }}>
                   Dashboard
+                </Link>
+              </Button>
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, display: "block" }}
+              >
+                <Link to="/projects" style={{ textDecoration: "none", color: "white" }}>
+                  Projects
                 </Link>
               </Button>
               <Button
@@ -251,10 +268,11 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<Projects />} />
         <Route path="/project-specs" element={<ProjectSpecs />} />
         <Route path="/budget-line-items" element={<BudgetLineItems />} />
         <Route path="/trades" element={<Trades />} />
-        <Route path="/settings" element={<Settings />} />
+        <Route path="/settings/*" element={<Settings />} />
         <Route path="/movies" element={<Movies />} />
       </Routes>
     </>
